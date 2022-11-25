@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+
+{% block title %}
+Login Page
+{% endblock %}
+
+{% block content %}
+<body class="text-center">
+<div class="container lg-6 col-lg-2">
+    <img class="mb-4" src="https://1password.com/img/logo-v1-min.png" width="50%">
+        <br>
+    <form method="POST" class="form-signin" style="color:white">
+        {{ form.hidden_tag() }}
+        <h1 class="h3 mb-3 font-wright-normal">Please Sign In</h1><br>
+
+        {{ form.username.label() }}
+        {{ form.username(class="form-control", placeholder="User name") }}
+        <br>
+
+        {{ form.password.label() }}
+        {{ form.password(class="form-control", placeholder="Password") }}
+        <br>
+
+
+        <div class="checkbox mb-3">
+            <h6>Do not have an account? <a href="{{ url_for('register') }}" style="text-decoration: none;">Click here</a></h6>
+        </div>
+        {{ form.submit(class="btn btn-lg btn-primary") }}
+    </form>
+</div>
+</body>
+{% endblock %}

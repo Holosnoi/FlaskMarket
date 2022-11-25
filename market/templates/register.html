@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+
+{% block title %}
+Register Page
+{% endblock %}
+
+{% block content %}
+<body class="text-center">
+<div class="container lg-6 col-lg-2">
+    <img class="mb-4" src="https://surveymonkey-assets.s3.amazonaws.com/survey/288378111/5ab9a4d5-0993-4f24-9423-f466394dbc94.png" width="50%">
+        <br>
+    <form method="POST" class="form-register" style="color:white">
+        {{ form.hidden_tag() }}
+        <h1 class="h3 mb-3 font-wright-normal">Please create your Account</h1><br>
+
+        {{ form.username.label() }}
+        {{ form.username(class="form-control", placeholder="User name") }}
+        <br>
+        {{ form.email.label() }}
+        {{ form.email(class="form-control", placeholder="Email Address") }}
+        <br>
+        {{ form.password1.label() }}
+        {{ form.password1(class="form-control", placeholder="Password") }}
+        <br>
+        {{ form.password2.label() }}
+        {{ form.password2(class="form-control", placeholder="Password") }}
+        <br>
+        {{ form.submit(class="btn btn-lg btn-primary") }}
+
+    </form>
+</div>
+</body>
+{% endblock %}
